@@ -26,7 +26,7 @@ public class Receiver {
     private void doWork(String in) throws InterruptedException {
         for (char ch : in.toCharArray()) {
             if (ch == '.') {
-                Thread.sleep(100);
+                Thread.sleep(500);
             }
         }
     }
