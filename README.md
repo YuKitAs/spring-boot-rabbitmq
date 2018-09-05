@@ -9,12 +9,18 @@ $ mvn clean package
 **Run the app with `sender` and `receiver` profiles in two terminals, for example:**
 
 ```console
-$ java -jar target/spring-boot-rabbitmq-0.0.1-SNAPSHOT.jar --spring.profiles.active=tut1,sender
-$ java -jar target/spring-boot-rabbitmq-0.0.1-SNAPSHOT.jar --spring.profiles.active=tut1,receiver
+$ ./run-sender.sh tut1
+$ ./run-receiver.sh tut1
 ```
 
 **List queues:**
 
 ```console
 # rabbitmqctl list_queues
+```
+
+**List bindings:**
+
+```console
+# rabbitmqctl list_bindings
 ```
