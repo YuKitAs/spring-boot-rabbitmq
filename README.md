@@ -13,6 +13,8 @@ $ ./run-sender.sh tut1
 $ ./run-receiver.sh tut1
 ```
 
+For more information about each tut, see [Wiki](https://github.com/YuKitAs/spring-boot-rabbitmq/wiki).
+
 **List queues:**
 
 ```console
