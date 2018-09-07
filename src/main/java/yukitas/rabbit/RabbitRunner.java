@@ -1,4 +1,4 @@
-package rabbit;
+package yukitas.rabbit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

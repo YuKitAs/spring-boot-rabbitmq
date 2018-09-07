@@ -1,4 +1,4 @@
-package rabbit.tut3;
+package yukitas.rabbit.tut3;
 
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

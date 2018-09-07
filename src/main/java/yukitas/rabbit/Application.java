@@ -1,4 +1,4 @@
-package rabbit;
+package yukitas.rabbit;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,4 +1,4 @@
-package rabbit.tut1;
+package yukitas.rabbit.tut1;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;

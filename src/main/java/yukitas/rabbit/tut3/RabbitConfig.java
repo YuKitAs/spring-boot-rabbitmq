@@ -1,4 +1,4 @@
-package rabbit.tut3;
+package yukitas.rabbit.tut3;
 
 import org.springframework.amqp.core.AnonymousQueue;
 import org.springframework.amqp.core.Binding;
@@ -12,9 +12,6 @@ import org.springframework.context.annotation.Profile;
 @Profile("tut3")
 @Configuration
 public class RabbitConfig {
-    /**
-     * Fanout exchange broadcasts all the messages it receives to all the queues it knows
-     */
     @Bean
     public FanoutExchange fanout() {
         return new FanoutExchange("fanout.exchange");

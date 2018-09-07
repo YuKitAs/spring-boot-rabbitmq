@@ -1,22 +1,19 @@
-package rabbit.tut3;
+package yukitas.rabbit.tut2;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.util.StopWatch;
 
+@RabbitListener(queues = "task-queue")
 public class Receiver {
-    @RabbitListener(queues = "#{autoDeleteQueue1.name}")
-    public void receive1(String in) throws InterruptedException {
-        receive(in, 1);
-    }
+    private final int instance;
 
-    @RabbitListener(queues = "#{autoDeleteQueue2.name}")
-    public void receive2(String in) throws InterruptedException {
-        receive(in, 2);
+    Receiver(int instance) {
+        this.instance = instance;
     }
 
     @RabbitHandler
-    public void receive(String in, int instance) throws InterruptedException {
+    public void receive(String in) throws InterruptedException {
         StopWatch watch = new StopWatch();
         watch.start();
         System.out.println("instance[" + instance + "] Received message: " + in);
