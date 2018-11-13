@@ -1,5 +1,11 @@
 # spring-boot-rabbitmq
 
+## Prerequisites
+
+* Rabbitmq-server
+* Java 1.8
+* Maven 3.5+
+
 **Build project with Maven:**
 
 ```console
