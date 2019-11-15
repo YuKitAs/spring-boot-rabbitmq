@@ -20,11 +20,22 @@
 # rabbitmqctl list_queues
 ```
 
+**List exchanges:**
+
+```console
+# rabbitmqctl list_exchanges
+```
+
 **List bindings:**
 
 ```console
 # rabbitmqctl list_bindings
 ```
+
+**Open Management UI:**
+
+Visit `http://localhost:15672/` and login with username `guest` and password `guest`.
+
 
 ## Spring Application
 
