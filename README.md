@@ -2,9 +2,31 @@
 
 ## Prerequisites
 
-* Rabbitmq-server
+* RabbitMQ 3.6.10 ([installation guide](https://www.rabbitmq.com/install-debian.html) on Ubuntu)
+* Spring Boot AMQP Starter 2.2.1
 * Java 1.8
-* Maven 3.5+
+* Maven 3.5.4
+
+## RabbitMQ
+
+**Start RabbitMQ Server:**
+
+```console
+# service rabbitmq-server start
+```
+**List queues:**
+
+```console
+# rabbitmqctl list_queues
+```
+
+**List bindings:**
+
+```console
+# rabbitmqctl list_bindings
+```
+
+## Spring Application
 
 **Build project with Maven:**
 
@@ -21,14 +43,4 @@ $ ./run-receiver.sh tut1
 
 For more information about each tut, see [Wiki](https://github.com/YuKitAs/spring-boot-rabbitmq/wiki).
 
-**List queues:**
 
-```console
-# rabbitmqctl list_queues
-```
-
-**List bindings:**
-
-```console
-# rabbitmqctl list_bindings
-```
