@@ -17,7 +17,7 @@ public class Client {
 
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void send() {
-        System.out.println("Requesting fib(" + start + ")");
+        System.out.println(String.format("Requesting fib(%d)", start));
         try {
 
             System.out.println("Got: " + template.convertSendAndReceive(exchange.getName(), "rpc", start++));

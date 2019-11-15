@@ -27,7 +27,7 @@ public class Sender {
             builder.append('.');
         }
 
-        builder.append(Integer.toString(++count));
+        builder.append((++count));
         String message = builder.toString();
         template.convertAndSend(queue.getName(), message);
         System.out.println("Sent message: " + message);

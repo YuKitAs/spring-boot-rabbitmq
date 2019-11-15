@@ -28,7 +28,7 @@ public class Sender {
 
         String key = keys[this.index];
         builder.append(key.toUpperCase()).append(' ');
-        builder.append(Integer.toString(++this.count));
+        builder.append((++this.count));
         String message = builder.toString();
         template.convertAndSend(direct.getName(), key, message);
         System.out.println("Sent message: " + message);

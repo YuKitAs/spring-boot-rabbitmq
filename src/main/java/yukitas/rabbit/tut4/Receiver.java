@@ -19,10 +19,10 @@ public class Receiver {
     public void receive(String in, int instance) throws InterruptedException {
         StopWatch watch = new StopWatch();
         watch.start();
-        System.out.println("instance[" + instance + "] Received message: " + in);
+        System.out.println(String.format("instance[%d] Received message: %s", instance, in));
         doWork(in);
         watch.stop();
-        System.out.println("instance[" + instance + "] Done in " + watch.getTotalTimeSeconds() + "s");
+        System.out.println(String.format("instance[%d] Done in %1.1f s", instance, watch.getTotalTimeSeconds()));
     }
 
     // Simulate the processing time according to the number of dots
