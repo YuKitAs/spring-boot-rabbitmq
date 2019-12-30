@@ -1,9 +1,6 @@
 package yukitas.rabbit.tut6;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.DirectExchange;
-import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,10 +22,7 @@ public class RabbitConfig {
     @Bean
     @Primary
     public Queue taskQueue() {
-        Queue queue = new Queue(ORIGINAL_QUEUE);
-        queue.getArguments().put("x-dead-letter-exchange", "");
-        queue.getArguments().put("x-dead-letter-routing-key", DLQ);
-        return queue;
+        return QueueBuilder.durable(ORIGINAL_QUEUE).deadLetterExchange("").deadLetterRoutingKey(DLQ).build();
     }
 
     @Bean
@@ -40,9 +34,7 @@ public class RabbitConfig {
     @Bean
     @Qualifier("delayed")
     public DirectExchange delayExchange() {
-        DirectExchange exchange = new DirectExchange(DELAY_EXCHANGE);
-        exchange.setDelayed(true);
-        return exchange;
+        return ExchangeBuilder.directExchange(DELAY_EXCHANGE).delayed().build();
     }
 
     @Bean
